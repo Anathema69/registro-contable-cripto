@@ -6,19 +6,18 @@ const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/authRoutes');
 const operationRoutes = require('./routes/operationRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
-
-// Conectar a MongoDB
 connectDB();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
 // Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/operations', operationRoutes);
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
   res.send('API funcionando correctamente');

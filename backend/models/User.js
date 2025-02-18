@@ -19,7 +19,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'user'],
     default: 'user'
-  }
+  },
+  // Campos adicionales
+  birthdate: Date,
+  accountNumber: String,
+  phone: String
 });
 
 module.exports = mongoose.model('User', userSchema);

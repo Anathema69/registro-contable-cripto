@@ -1,7 +1,11 @@
 // backend/routes/operationRoutes.js
 const express = require('express');
 const router = express.Router();
-const { createOperation, getOperationsByUser, exportOperationsCSV } = require('../controllers/operationController');
+const {
+  createOperation,
+  getOperationsByUser,
+  exportOperationsCSV
+} = require('../controllers/operationController');
 const authMiddleware = require('../utils/authMiddleware');
 
 router.post('/', authMiddleware, createOperation);

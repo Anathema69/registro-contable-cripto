@@ -8,10 +8,10 @@ const operationSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now // Se guarda automáticamente
   },
   description: String,
-  amount: Number,
+  amount: Number, // Soporta decimales
   type: {
     type: String,
     enum: ['ingreso', 'egreso'],
